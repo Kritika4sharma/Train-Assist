@@ -146,13 +146,6 @@ mark {
   color: #000;
 }
 
-
-body {
-   background-image: url("back.jpg");
-   background-color: #cccccc;
-}
-
-
 /**
  * Address inconsistent and variable font size in all browsers.
  */
