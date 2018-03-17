@@ -1,0 +1,1 @@
+weather condtions of every day of 2017 for particular city.
