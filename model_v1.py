@@ -10,6 +10,8 @@ from sklearn.ensemble import VotingClassifier
 from pandas import read_csv
 from pandas import DataFrame
 
+import pickle
+
 def make_class(row):
 	if row['delay'] <= 60:
 		return "1"
@@ -54,16 +56,19 @@ cm = confusion_matrix(y_test, svm_predictions)
 print(cm)
 
 clf = RandomForestClassifier(n_estimators = 5, max_depth=5, random_state=0)
-clf.fit(X, y)
+clf.fit(X_train, y_train)
 
 #print(clf.predict([['2018', '04', '01']]))
-print(clf.score(X, y, sample_weight=None))
+print(clf.score(X_test, y_test, sample_weight=None))
 
 clf2 = GradientBoostingClassifier(n_estimators=10, learning_rate=1.0, max_depth=5, random_state=0).fit(X_train, y_train)
 print(clf2.score(X_test, y_test))
 #print(clf2.predict([['2018', '04', '01']]))
 
 eclf1 = VotingClassifier(estimators=[('lsvm', svm_model_linear), ('rf', clf), ('gbc', clf2)], voting = 'hard')
-eclf1 = eclf1.fit(X, y)
-print(eclf1.score(X,y,sample_weight=None))
+eclf1 = eclf1.fit(X_train, y_train)
+print(eclf1.score(X_test,y_test,sample_weight=None))
 #print(eclf1.predict([['2018', '04', '01']]))
+
+filename = 'finalized_model.sav'
+pickle.dump(eclf1, open(filename, 'wb'))
