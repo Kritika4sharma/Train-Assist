@@ -33,11 +33,11 @@ def make_class(row):
 		return "9"
 
 # loading the dataset
-ourdata = read_csv('our_data.csv', header=None, names = ['vis1','vis2','vis3','vis4','vis5','tempmax1','tempmax2','tempmax3','tempmax4','tempmax5','tempmin1','tempmin2','tempmin3','tempmin4','tempmin5','distance','delay'])
+ourdata = read_csv('our_data.csv', header=None, names = ['vis1','vis2','vis3','vis4','vis5','tempmax1','tempmax2','tempmax3','tempmax4','tempmax5','tempmin1','tempmin2','tempmin3','tempmin4','tempmin5','distance','traintype','delay'])
 ourdata = ourdata.assign(output_class=ourdata.apply(make_class, axis=1))
 
 # X -> features, y -> label
-X = ourdata.loc[:,['vis1','vis2','vis3','vis4','vis5','tempmax1','tempmax2','tempmax3','tempmax4','tempmax5','tempmin1','tempmin2','tempmin3','tempmin4','tempmin5','distance']]
+X = ourdata.loc[:,['vis1','vis2','vis3','vis4','vis5','tempmax1','tempmax2','tempmax3','tempmax4','tempmax5','tempmin1','tempmin2','tempmin3','tempmin4','tempmin5','distance','traintype']]
 y = ourdata.loc[:,'output_class']
  
 # dividing X, y into train and test data
