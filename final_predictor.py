@@ -9,6 +9,26 @@ import pickle
 import scipy
 import datetime
 
+def define_output(resultclass):
+    if(resultclass == '1'):
+        return "Upto 1 hour"
+    elif(resultclass == '2'):
+        return "1 to 2 hour"
+    elif(resultclass == '3'):
+        return "2 to 3 hour"
+    elif(resultclass == '4'):
+        return "3 to 4 hour"
+    elif(resultclass == '5'):
+        return "4 to 5 hour"
+    elif(resultclass == '6'):
+        return "5 to 6 hour"
+    elif(resultclass == '7'):
+        return "6 to 7 hour"
+    elif(resultclass == '8'):
+        return "7 to 8 hour"
+    elif(resultclass == '9'):
+        return "8+ hours"
+
 train_num=input('train_num ')
 predict_date=input('date_for_prediction ')
 present_date=datetime.datetime.strftime(datetime.datetime.now() - timedelta(4), '%Y-%m-%d')
@@ -101,9 +121,9 @@ else:
 
 result.append(type_t)
 
-print(loaded_model.predict([result]))
-
-
+output_v1 = loaded_model.predict([result])
+model_output = define_output(output_v1)
+print(model_output)
 
 
 '''
