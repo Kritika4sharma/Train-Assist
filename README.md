@@ -25,7 +25,7 @@ now navigate to address http://localhost:8110/ in browser to use web app.
 
 ### Some Results
 
-<img src ="https://user-images.githubusercontent.com/18103181/37563712-15ae5926-2aad-11e8-92bb-a81e5bad3846.jpg" >
+<img src ="https://user-images.githubusercontent.com/8950144/37564369-bf2e4774-2aba-11e8-8884-6f2b930718c3.png width=400 height=300" >
 
 
 
