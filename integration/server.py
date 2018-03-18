@@ -42,8 +42,9 @@ class WebSocket(tornado.websocket.WebSocketHandler):
                                       separators=(",", ":")))
 
 
+port = input()
 parser = argparse.ArgumentParser(description="Starts a webserver")
-parser.add_argument("--port", type=int, default=8110, help="The port on which "
+parser.add_argument("--port", type=int, default=port, help="The port on which "
                     "to serve the website.")
 args = parser.parse_args()
 
