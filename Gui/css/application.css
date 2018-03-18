@@ -92,3 +92,21 @@ input[type=number]:focus {
   font-weight: bold;
   margin-bottom: 20px;
 }
+
+
+.button-wr {
+    border: 0px;
+    padding: 8px 10px;
+    border-radius: 1px;
+
+    cursor: pointer;
+    color: #fff;
+    background: #7aa76d;
+    text-align: left;
+}
+    .button-wr:hover {
+        background: #91cd85;
+    }
+    .button-wr:active {
+        background: #60895a;
+    }
