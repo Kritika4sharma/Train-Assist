@@ -15,7 +15,7 @@ foo@bar:~$ python3 server.py
 (enter an available port number)
 ```
 
-now navigate to address http://localhost:8110/ in browser to use web app.
+now navigate to address http://localhost:(port number)/ in browser to use web app.
 
 ### Analysis
 
