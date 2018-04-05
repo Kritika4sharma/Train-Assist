@@ -10,7 +10,7 @@ Kritika Sharma, Ashima Elhence, Akanksha Bhardwaj, Sumedha Agarwal
 
 ```console
 foo@bar:~$ cd Train-Assist
-foo@bar:~$ cd instructions
+foo@bar:~$ cd integration
 foo@bar:~$ python3 server.py
 (enter an available port number)
 ```
